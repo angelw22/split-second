@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <main>
+        <!-- Start screen -->
+        <div id="startscreen">
+            <h3>Some title</h3>
+            <button id="startbtn">START</button>
+        </div>
+
+        <!-- Front clip -->
+        <video muted style="display:none" preload="auto" width="100%" height="auto" src="Frontclip.mov" id="frontclip" > </video>
+
+        <!-- Selection screen -->
+        <div id="sltncontainer" style="display:none">
+            <img id="sltnimg" src="" />
+            <div id="timer">00:30</div>
+            <div id="sltnbtncont">
+                <button class="arrowbtns" id="leftbtn"> &#60; </button>
+                <button class="arrowbtns" id="okbtn"> ok </button>
+                <button class="arrowbtns" id="rightbtn"> &#62; </button>
+            </div>
+        </div>
+
+        <!-- obituary -->
+        <div id="obituary">
+            <img id="obitimg" src="" />
+        </div>
+    </main>
+	<script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+h1, h2, h3 {
+    font-family: 'Michroma', sans-serif;
+    color: cyan;
+}
+
+body {
+    background-color: black;
+    overflow: hidden;
+    font-family: 'Zen Kurenaido', sans-serif;
+}
+
+button {
+    font-family: 'Michroma', sans-serif;
+    color: cyan;
+    border: 2px solid cyan;
+    border-radius: 8px;
+    padding: 32px 40px;
+    background: none;
+    margin: auto;
+}
+
+
+button:hover {
+    background: #00ffff4f;
+    cursor: pointer;
+}
+
+#startbtn {
+    font-size: 24px;
+}
+
+
+#startscreen {
+    width:100vw;
+    margin-top: 50vh;
+    text-align: center;
+}
+
+#sltncontainer { 
+    display: block;
+    width: 100vw;
+    height: auto;
+}
+
+#sltnimg {
+    width: 100%;
+}
+
+#sltnbtncont {
+    position: absolute; 
+    bottom: 30px; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.arrowbtns {
+    font-size: 20px;
+    padding: 16px 32px;
+    background: #00ffff3d;
+}
+
+
+#timer {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    color: red;
+    font-size: 40px;
+}
+
+#obituary {
+    width: 100vw;
+    height: auto;
+}
+
+#obitimg {
+    width: 100%; 
+    height: auto;
+    opacity: 0;
+    -webkit-transition: all 4s ease; 
+    -moz-transition: all 4s ease; 
+    -ms-transition: all 4s ease; 
+    -o-transition: all 4s ease; 
+}
