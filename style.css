@@ -54,6 +54,7 @@ button:hover {
 }
 
 .arrowbtns {
+    margin: 0 10px;
     font-size: 20px;
     padding: 16px 32px;
     background: #00ffff3d;
