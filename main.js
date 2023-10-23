@@ -8,6 +8,14 @@ let vid = document.getElementById("frontclip");
 let timer = document.getElementById("timer");
 
 
+
+//audio
+let crashaudio = new Audio('audio/Crash.m4a');
+let selectionaudio = new Audio('audio/PersonSelection.m4a');
+let suspenseaudio = new Audio('audio/suspense.wav');
+let countdown = new Audio('audio/Countdown.mp3');
+
+
 let selectionShots = ["./img/one.png", "./img/two.png", "./img/three.png", "./img/four.png"];
 let obitImgs = ["./img/obit1.png", "./img/obit2.png", "./img/obit3.png", "./img/obit4.png"];
 let currentShot;
@@ -23,18 +31,24 @@ document.getElementById('okbtn').addEventListener("click", endGame);
 
 
 function start() {
+    selectionaudio.loop = false;
+    selectionaudio.play();
     vid.style.display = "block";
     startscreen.style.display = "none";
     vid.play();
 }
 
 function selection() {
+    countdown.loop = false;
+    countdown.play();
     vid.style.display = "none";
     selectionContainer.style.display ="block";
     startTimer(30, timer);
 }
 
 function select(dir) {
+    selectionaudio.loop = false;
+    selectionaudio.play();
     if (dir == "left") {
         currentShot =  currentShot == 0 ? 3 : currentShot -=1;
         console.log('math is', currentShot);
@@ -66,10 +80,12 @@ if(e.key == "q") {
     }
 }
 
+let timerinterval;
+let endgametriggered = false;
 
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
-    setInterval(function () {
+    timerinterval = setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 
@@ -79,15 +95,26 @@ function startTimer(duration, display) {
         display.textContent = minutes + ":" + seconds;
 
         if (--timer < 0) {
+            clearInterval(timerinterval)
             endGame()
         }
     }, 1000);
 }
 
 function endGame() {
-    selectionContainer.style.display = "none";
-    obitimg.src = obitImgs[currentShot];
-    obituary.style.display = "block";
-    obitimg.style.opacity= 1;
+    if (!endgametriggered) {
+        endgametriggered = true;
+        countdown.pause();
+        countdown.currentTime = 0;
+        console.log('triggerd');
+        crashaudio.loop = false;
+        crashaudio.play();
+        suspenseaudio.loop = true;
+        suspenseaudio.play();
+        selectionContainer.style.display = "none";
+        obitimg.src = obitImgs[currentShot];
+        obituary.style.display = "block";
+        obitimg.style.opacity= 1;
+    }
 }
 
